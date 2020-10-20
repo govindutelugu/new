@@ -1,0 +1,22 @@
+# openapi2-functions.yaml
+swagger: '2.0'
+info:
+  title: sample api
+  description: Sample API on API Gateway with a Google Cloud service backend
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /sample-response:
+    get:
+      summary: Greet a user
+      operationId: Welcome to python + GCP
+      x-google-backend:
+        address: https://sample-python-service-dot-cloudfunctionsdemo-291704.uc.r.appspot.com/sample-response
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
